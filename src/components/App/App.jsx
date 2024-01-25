@@ -2,6 +2,7 @@ import axios from 'axios';
 import './App.css';
 import StudentForm from '../StudentForm/StudentForm.jsx';
 import StudentList from '../StudentList/StudentList.jsx';
+import About from '../About/About.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -27,10 +28,20 @@ function App() {
                 <h1 className="App-title">GitHub Student List</h1>
                 </header>
                 <br/>
-                <StudentForm />
+                
+                <Route path="/" exact>
+                    <StudentForm />
+                </Route>
 
-                <p>Student list:</p>
-                <StudentList />
+                <Route path="/about">
+                    <About />
+                </Route>
+
+                <Route path="/allStudents">
+                    <p>Student list:</p>
+                    <StudentList />
+                </Route>
+
             </Router>
         </div>
     );
